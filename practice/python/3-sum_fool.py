@@ -11,17 +11,17 @@ def read(filename):
     return n, data
 
 
-def main():
-    n, data = read('../tests/8int.txt')
+def main(filename):
+    n, data = read(filename)
     count = 0
     for i in range(n - 2):
         for j in range(i + 1, n - 1):
             for k in range(j + 1, n):
                 if data[i] + data[j] + data[k] == 0:
-                    print(data[i], data[j], data[k])
                     count += 1
     return count
 
 
 if __name__ == '__main__':
-    print(main())
+    import sys
+    print(main(sys.argv[1]))

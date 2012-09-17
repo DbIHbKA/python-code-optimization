@@ -26,18 +26,17 @@ def bin_search(a, x):
         return False
 
 
-def main():
-    n, data = read('../tests/8int.txt')
+def main(filename):
+    n, data = read(filename)
     data.sort()
-    print(data)
     count = 0
     for i in range(n - 2):
         for j in range(i + 1, n - 1):
             if bin_search(data[j + 1:], -(data[i] + data[j])):
-                print(data[i], data[j], -(data[i]+data[j]))
                 count += 1
     return count
 
 
 if __name__ == '__main__':
-    print(main())
+    import sys
+    print(main(sys.argv[1]))
