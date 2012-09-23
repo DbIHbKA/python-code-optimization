@@ -2,7 +2,7 @@ program test
     INTEGER :: i,j,k,n,count
     INTEGER, ALLOCATABLE:: mas(:)
 
-    OPEN(unit=12, file="../tests/8Kint.txt")
+    OPEN(unit=12, file="../tests/8d Kint.txt")
 
     READ(12, *) n
     ALLOCATE(mas(n))
